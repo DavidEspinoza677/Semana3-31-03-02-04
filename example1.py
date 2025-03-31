@@ -1,5 +1,5 @@
 #Leer cantidad de edad y calcular la media 
-
+import statistics
 class Edad:
     def __init__(self, edad):
         self.edad = edad
@@ -10,6 +10,9 @@ class Edad:
     def mostrar_media(self):
         media = self.calcular_media()
         return f"La media de las edades es: {media:.2f} años"
+    
+    def calcular_media(self):
+        return st.mean(self.edades)
     
 def main():
     edades = []
@@ -28,6 +31,7 @@ def main():
     else:
         edad_obj = Edad(edades)
         print(edad_obj.mostrar_media())
+        print(f"La media calculada es statistics: {edad_obj.calcular_media():.2f}")
 
     if __name__ == "__main__":
         main()
